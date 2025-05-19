@@ -69,12 +69,30 @@ namespace TP7_Grupo18_Programacion
         protected global::System.Web.UI.WebControls.DataList dlProvincias;
 
         /// <summary>
-        /// Control SqlDataSource1.
+        /// Control ListView1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::System.Web.UI.WebControls.ListView ListView1;
+
+        /// <summary>
+        /// Control SqlDataSourceProvincias.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceProvincias;
+
+        /// <summary>
+        /// Control SqlDataSourceSucursales.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceSucursales;
     }
 }
