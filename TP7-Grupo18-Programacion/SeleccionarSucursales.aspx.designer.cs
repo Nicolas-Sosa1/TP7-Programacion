@@ -69,13 +69,13 @@ namespace TP7_Grupo18_Programacion
         protected global::System.Web.UI.WebControls.DataList dlProvincias;
 
         /// <summary>
-        /// Control ListView1.
+        /// Control lvSucursales.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView ListView1;
+        protected global::System.Web.UI.WebControls.ListView lvSucursales;
 
         /// <summary>
         /// Control SqlDataSourceProvincias.
