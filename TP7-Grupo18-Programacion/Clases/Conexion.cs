@@ -24,5 +24,20 @@ namespace TP7_Grupo18_Programacion.Clases
                 return null;
             }
         }
+
+        public SqlDataAdapter ObtenerAdaptador(string consultaSql)
+        {
+            SqlDataAdapter sqlDataAdapter;
+            try
+            {
+                sqlDataAdapter = new SqlDataAdapter(consultaSql, ObtenerConexion());
+                return sqlDataAdapter;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+
+        }
     }
 }
