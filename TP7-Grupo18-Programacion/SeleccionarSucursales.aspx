@@ -45,7 +45,7 @@
             <table class="auto-style1">
                 <tr>
                     <td class="auto-style2">
-                        <asp:DataList ID="dlProvincias" runat="server" DataSourceID="SqlDataSourceProvincias">
+                        <asp:DataList ID="dlProvincias" runat="server">
                             <ItemTemplate>
                                 <asp:Button ID="btnProvincia" runat="server" Text='<%# Eval("DescripcionProvincia") %>' Width="150px" />
                                 <br />
@@ -54,7 +54,7 @@
                         </asp:DataList>
                     </td>
                     <td>
-                        <asp:ListView ID="lvSucursales" runat="server" DataKeyNames="Id_Sucursal" DataSourceID="SqlDataSourceSucursales" GroupItemCount="3">
+                        <asp:ListView ID="lvSucursales" runat="server" DataKeyNames="Id_Sucursal" GroupItemCount="3">
  <%--                           <AlternatingItemTemplate>
                                 <td runat="server" style="background-color:#FFF8DC;">Id_Sucursal:
                                     <asp:Label ID="Id_SucursalLabel" runat="server" Text='<%# Eval("Id_Sucursal") %>' />
@@ -164,10 +164,7 @@
                 </tr>
             </table>
             <br />
-&nbsp;<asp:SqlDataSource ID="SqlDataSourceProvincias" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString %>" SelectCommand="SELECT [DescripcionProvincia], [Id_Provincia] FROM [Provincia]"></asp:SqlDataSource>
-
-            <br />
-            <asp:SqlDataSource ID="SqlDataSourceSucursales" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString %>" SelectCommand="SELECT [Id_Sucursal], [NombreSucursal], [DescripcionSucursal], [URL_Imagen_Sucursal] FROM [Sucursal]"></asp:SqlDataSource>
+&nbsp;<br />
             <br />
 
         </div>
