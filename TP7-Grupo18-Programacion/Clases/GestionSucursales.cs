@@ -49,5 +49,21 @@ namespace TP7_Grupo18_Programacion.Clases
             string consultaSql = $"SELECT * FROM Sucursal WHERE NombreSucursal LIKE '%{nombre}%'";
             return ObtenerTablaProductos("Sucursal", consultaSql);
         }
+
+        public DataTable ObtenerProvincias()
+        {
+            string consulta = "SELECT * FROM Provincia";
+            return ObtenerTablaProductos("Provincia", consulta);
+        }
+
+        public DataTable ObtenerSucursalesPorProvincia(int idProvincia)
+        {
+            string consulta = "SELECT * FROM Sucursal WHERE Id_ProvinciaSucursal = @idProvincia";
+            SqlDataAdapter adapter = new SqlDataAdapter(consulta, new Conexion().ObtenerConexion());
+            adapter.SelectCommand.Parameters.AddWithValue("@idProvincia", idProvincia);
+            DataSet ds = new DataSet();
+            adapter.Fill(ds, "Sucursal");
+            return ds.Tables["Sucursal"];
+        }
     }
 }
