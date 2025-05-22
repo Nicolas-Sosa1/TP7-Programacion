@@ -44,6 +44,10 @@ namespace TP7_Grupo18_Programacion.Clases
             return ObtenerTablaProductos("Sucursal", consultaSql);
         }
 
-
+        public DataTable BuscarSucursalPorNombre(string nombre)
+        {
+            string consultaSql = $"SELECT * FROM Sucursal WHERE NombreSucursal LIKE '%{nombre}%'";
+            return ObtenerTablaProductos("Sucursal", consultaSql);
+        }
     }
 }
