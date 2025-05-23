@@ -106,10 +106,39 @@ namespace TP7_Grupo18_Programacion
                     {
                         Session["tabla"] = CrearTabla();
                     }
+                   
+                    DataTable tabla = (DataTable)Session["tabla"];
+                    bool yaExiste = tabla.AsEnumerable().Any(row => row["Id_Sucursal"].ToString() == idSucursal);
 
-                    AgregarFila((DataTable)Session["tabla"], idSucursal, nombre, descripcion);
+                    // Si el ID ya existe
+                    if (yaExiste)
+                    {
+                        lblMensaje.Text = "Sucursal ya agregada, seleccione otra";
+                        lblMensaje.ForeColor = System.Drawing.Color.Red;
+                    }
+                    // Si no existe agrega la sucursal
+                    else
+                    {
+                        AgregarFila((DataTable)Session["tabla"], idSucursal, nombre, descripcion);
+                        Session["Tabla"] = tabla;
+                        lblMensaje.Text = "Sucursal agregada: " + nombre;
+                        lblMensaje.ForeColor = System.Drawing.Color.Green;
+
+                    }
+                    
                 }
 
+            }
+        }
+
+        protected void btnProvincia_Command(object sender, CommandEventArgs e)
+        {
+            if (e.CommandName == "filtrarProvincia")
+            {
+                int idProvincia = Convert.ToInt32(e.CommandArgument);
+                GestionSucursales gestion = new GestionSucursales();
+                lvSucursales.DataSource = gestion.ObtenerSucursalesPorProvincia(idProvincia);
+                lvSucursales.DataBind();
             }
         }
 

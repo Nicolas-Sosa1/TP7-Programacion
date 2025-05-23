@@ -38,18 +38,26 @@
             <asp:TextBox ID="txtNombreSucursal" runat="server" Width="252px"></asp:TextBox>
             &nbsp;
             <asp:Button ID="btnBuscar" runat="server" Text="Buscar" />
-
             <br />
-
             <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;
+            <asp:Label ID="lblMensaje" runat="server" Text=""></asp:Label>
             <table class="auto-style1">
                 <tr>
                     <td class="auto-style2">
                         <asp:DataList ID="dlProvincias" runat="server">
                             <ItemTemplate>
-                                <asp:Button ID="btnProvincia" runat="server" Text='<%# Eval("DescripcionProvincia") %>' Width="150px" />
+                                <asp:Button ID="btnProvincia" runat="server" Text='<%# Eval("DescripcionProvincia") %>' CommandName="filtrarProvincia" CommandArgument='<%# Eval("Id_Provincia") %>' OnCommand="btnProvincia_Command" Width="150px" />
                                 <br />
-<br />
+                                <br />
                             </ItemTemplate>
                         </asp:DataList>
                     </td>
@@ -168,6 +176,7 @@
             <br />
 
         </div>
+      
     </form>
 </body>
 </html>
