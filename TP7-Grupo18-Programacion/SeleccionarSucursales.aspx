@@ -37,7 +37,7 @@
             Búsqueda por nombre de sucursal:&nbsp;&nbsp;
             <asp:TextBox ID="txtNombreSucursal" runat="server" Width="252px"></asp:TextBox>
             &nbsp;
-            <asp:Button ID="btnBuscar" runat="server" Text="Buscar" />
+            <asp:Button ID="btnBuscar" runat="server" Text="Buscar" OnClick="btnBuscar_Click" />
             <br />
             <br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
