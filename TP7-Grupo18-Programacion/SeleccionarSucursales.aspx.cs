@@ -142,5 +142,15 @@ namespace TP7_Grupo18_Programacion
             }
         }
 
+        protected System.Void lvSucursales_PagePropertiesChanging(System.Object sender, System.Web.UI.WebControls.PagePropertiesChangingEventArgs e)
+        {
+            DataPager dataPager = (DataPager)lvSucursales.FindControl("DataPager1");
+            if (dataPager != null)
+            {
+                dataPager.SetPageProperties(e.StartRowIndex, e.MaximumRows, false);
+            }
+
+            CargarListView();
+        }
     }
 }
