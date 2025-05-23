@@ -71,7 +71,20 @@ namespace TP7_Grupo18_Programacion
             return dataTable;
         }
 
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (txtNombreSucursal.Text == "")
+            {
+                CargarListView();
+            }
+            else if (txtNombreSucursal.Text != "")
+            {
 
+                GestionSucursales gestionSucursales = new GestionSucursales();
+                lvSucursales.DataSource = gestionSucursales.BuscarSucursalPorNombre(txtNombreSucursal.Text);
+                lvSucursales.DataBind();
+            }
+        }
 
     }
 }
