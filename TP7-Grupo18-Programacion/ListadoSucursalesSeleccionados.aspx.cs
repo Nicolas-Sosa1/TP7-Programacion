@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
+
 
 namespace TP7_Grupo18_Programacion
 {
@@ -11,7 +13,7 @@ namespace TP7_Grupo18_Programacion
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            f(Session["tabla"] != null)
+            if(Session["tabla"] != null)
             {
                 gvSucursales.DataSource = (DataTable)Session["tabla"];
                 gvSucursales.DataBind();

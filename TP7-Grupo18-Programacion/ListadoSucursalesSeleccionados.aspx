@@ -21,6 +21,25 @@
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:HyperLink ID="hlMostrar" runat="server" NavigateUrl="~/ListadoSucursalesSeleccionados.aspx">Mostrar sucursales seleccionadas</asp:HyperLink>
             <br /><br />
+            <asp:GridView ID="gvSucursales" runat="server" AutoGenerateColumns="False">
+                <Columns>
+                    <asp:TemplateField HeaderText="ID_SUCURSAL">
+                        <ItemTemplate>
+                            <asp:Label ID="lbl_it_IdSucursal" runat="server" Text='<%# Bind("Id_Sucursal") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="NOMBRE">
+                        <ItemTemplate>
+                            <asp:Label ID="lbl_it_Nombre" runat="server" Text='<%# Bind("NombreSucursal") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="DESCRIPCION">
+                        <ItemTemplate>
+                            <asp:Label ID="lbl_it_DescripcionSucursal" runat="server" Text='<%# Bind("DescripcionSucursal") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                </Columns>
+            </asp:GridView>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
