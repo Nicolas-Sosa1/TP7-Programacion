@@ -62,7 +62,7 @@
                         </asp:DataList>
                     </td>
                     <td>
-                        <asp:ListView ID="lvSucursales" runat="server" DataKeyNames="Id_Sucursal" GroupItemCount="3">
+                        <asp:ListView ID="lvSucursales" runat="server" DataKeyNames="Id_Sucursal" GroupItemCount="3" OnPagePropertiesChanging="lvSucursales_PagePropertiesChanging">
  <%--                           <AlternatingItemTemplate>
                                 <td runat="server" style="background-color:#FFF8DC;">Id_Sucursal:
                                     <asp:Label ID="Id_SucursalLabel" runat="server" Text='<%# Eval("Id_Sucursal") %>' />
