@@ -11,6 +11,11 @@ namespace TP7_Grupo18_Programacion
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            f(Session["tabla"] != null)
+            {
+                gvSucursales.DataSource = (DataTable)Session["tabla"];
+                gvSucursales.DataBind();
+            }
 
         }
     }

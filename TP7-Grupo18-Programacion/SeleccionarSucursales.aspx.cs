@@ -86,5 +86,32 @@ namespace TP7_Grupo18_Programacion
             }
         }
 
+        protected void btnSeleccionar_Command(object sender, CommandEventArgs e)
+        {
+
+            if (e.CommandName == "eventoSeleccionar")
+            {
+
+                string[] datos = e.CommandArgument.ToString().Split('|');
+
+                if (datos.Length == 3)
+                {
+                    string idSucursal = datos[0];
+                    string nombre = datos[1];
+                    string descripcion = datos[2];
+
+
+
+                    if (Session["tabla"] == null)
+                    {
+                        Session["tabla"] = CrearTabla();
+                    }
+
+                    AgregarFila((DataTable)Session["tabla"], idSucursal, nombre, descripcion);
+                }
+
+            }
+        }
+
     }
 }
